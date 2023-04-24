@@ -25,7 +25,6 @@ services:
     volumes:
       - portainer_data:/data
     networks:
-      - agent_network
       - traefik-net
     deploy:
       mode: replicated
