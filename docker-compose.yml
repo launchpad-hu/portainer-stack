@@ -20,6 +20,12 @@ services:
     command: -H tcp://tasks.agent:9001 --tlsskipverify
     expose:
       - 9000
+      - 8000
+      - 9443
+    ports:
+      - 9000:9000
+      - 8000:8000
+      - 9443:9443
     volumes:
       - portainer_data:/data
     networks:
