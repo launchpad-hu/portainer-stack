@@ -12,6 +12,8 @@ services:
       mode: global
       placement:
         constraints: [node.platform.os == linux]
+      labels:
+        - "traefik.enable=false"
 
   portainer:
     image: portainer/portainer-ce:2.18.1
