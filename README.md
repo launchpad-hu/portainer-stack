@@ -1,3 +1,3 @@
 # portainer-stack
 
-a stack to be deployed to Dokku
+A stack to be deployed to Dokku with dokku-scheduler-swarm
