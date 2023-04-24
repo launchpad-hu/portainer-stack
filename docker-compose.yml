@@ -18,10 +18,6 @@ services:
   portainer:
     image: portainer/portainer-ce:2.18.1
     command: -H tcp://tasks.agent:9001 --tlsskipverify
-    expose:
-      - 9000
-      - 8000
-      - 9443
     ports:
       - 9000:9000
       - 8000:8000
