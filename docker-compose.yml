@@ -21,8 +21,8 @@ services:
     volumes:
       - portainer_data:/data
     networks:
-      - traefik-net
       - agent_network
+      - traefik-net
     deploy:
       mode: replicated
       replicas: 1
@@ -30,6 +30,7 @@ services:
         constraints: [node.role == manager]
       labels:
         - "traefik.enable=true"
+        - "traefik.docker.network=traefik-net"
         - "traefik.http.routers.portainer.rule=Host(`portainer.dev.launchpad.hu`)"
         - "traefik.http.routers.portainer.entrypoints=https"
         - "traefik.http.routers.portainer.tls.certresolver=leresolver"
