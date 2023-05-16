@@ -30,11 +30,11 @@ services:
         constraints: [node.role == manager]
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.portainer.rule=Host(`${DOMAIN}`)"
-        - "traefik.http.routers.portainer.entrypoints=https"
-        - "traefik.http.routers.portainer.tls.certresolver=leresolver"
-        - "traefik.http.routers.portainer.service=portainer"
-        - "traefik.http.services.portainer.loadbalancer.server.port=9000"
+        - "traefik.http.routers.${APP}.rule=Host(`${DOMAIN}`)"
+        - "traefik.http.routers.${APP}.entrypoints=https"
+        - "traefik.http.routers.${APP}.tls.certresolver=leresolver"
+        - "traefik.http.routers.${APP}.service=${APP}"
+        - "traefik.http.services.${APP}.loadbalancer.server.port=9000"
         - "traefik.docker.network=traefik-net"
 
 networks:
